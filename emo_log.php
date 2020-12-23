@@ -7,7 +7,7 @@ if (isset($_SESSION['USER']) && $_SESSION['USER'] != null){
 ?>
 <!DOCTYPE html>
 <html lang="ja">
-	<input type="button" onclick="location.href='./emo_main.php'" value="感情整理">
+	<input type="button" onclick="location.href='./menu.php'" value="メニュー">
 <head>
 <meta charset="UTF-8">
 </head>
