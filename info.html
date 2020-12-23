@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="jp" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div>
+      <header>
+        心のいろ
+      </header>
+      <div>
+        <h2>心療内科</h2>
+      </div>
+      <div>
+        <form action="#" id="form">
+          <input id="place" type="text" name="place" value="">
+          <button id="searchbtn" type="submit" name="button" >検索</button>
+        </form>
+      </div>
+      <div style="background-color: aqua;" id="output">
+      </div>
+    </div>
+    <script defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBU-55Mr1Ru6cbqGgM_L6m-j93TzLP45Yk&libraries=places&callback=initMap">
+    </script>
+    <script src="./jquery-3.5.1.min.js">
+    </script>
+    <script  src="./info.js">
+    </script>
+  </body>
+</html>
