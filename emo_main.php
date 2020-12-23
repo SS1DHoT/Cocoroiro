@@ -20,14 +20,8 @@ if (isset($_SESSION['USER']) && $_SESSION['USER'] != null){
     <link rel="stylesheet" href="emo_main.css">
 
     <div class="btn">
-	<form action="menu.php">
-		<button type="button" class="button1" value="ホーム">
-        <img src="home.png">ホームへ</button>
-	</form>
-	<form action="emo_color.php">
-		<button type="button" onclick="location.href='./emo_color.php'" class="button2" value="色変更">
-        <img src="setting.png">色変更</button>
-     </form>
+	<input type="button" onclick="location.href='./menu.php'" value="ホームへ">
+	<input type="button" onclick="location.href='./emo_color.php'" value="色変更">
     </div>
     
 <head>
