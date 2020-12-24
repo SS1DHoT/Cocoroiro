@@ -7,11 +7,26 @@ if (isset($_SESSION['USER']) && $_SESSION['USER'] != null){
 ?>
 <!DOCTYPE html>
 <html lang="ja">
-	<input type="button" onclick="location.href='./menu.php'" value="メニュー">
+     <link rel="stylesheet" href="timeline.css">
+     <div class="btn">
+    <button type="button" onclick="location.href='./menu.php'"　value="ホーム"><img src="home.png">ホームへ</button>
+    <button type="button" onclick ="location.href='./submiss.php'" class="button1" value="投稿"> 投稿 <br>
+    <img src="plus.png" class="img1"></button>
+    </div>
+    
 <head>
 <meta charset="UTF-8">
+    <!--スマホサイズに合わせる-->
+    <meta name="viewport"
+    content="width=320,
+    height=480,
+    initial-scale=1.0,
+    minimum-scale=1.0,
+    maximum-scale=2.0,
+    user-scalable=yes" />
 </head>
 <body>
+    <div class="box">
 	<select id="cate">
 		<option value="人間関係">人間関係</option>
 		<option value="仕事">仕事</option>
@@ -22,19 +37,18 @@ if (isset($_SESSION['USER']) && $_SESSION['USER'] != null){
 	</select>
 	<button id="btn">検索</button>
 	<div id="table">
-		
+        </div>
 	</div>
-	<input type="button" onclick="location.href='./submiss.php'" value="投稿">
-		
+    
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
 const btn = document.getElementById("btn");
 btn.addEventListener('click',get_data);
 
 function get_data(){
-	
+
 	var cate = $('#cate').val();
-	
+
 	var param ={"cate":cate}
 			$.post({
 				url: 'request5.php', //　送り先
