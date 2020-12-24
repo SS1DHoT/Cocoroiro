@@ -7,15 +7,31 @@ if (isset($_SESSION['USER']) && $_SESSION['USER'] != null){
 ?>
 <!DOCTYPE html>
 <html lang="ja">
-	<input type="button" onclick="location.href='./menu.php'" value="メニュー">
+    <link rel="stylesheet" href="emo_log.css">
+    <div class="btn">
+	<form action="emo_main.php">
+		<button type="button" name="" value="感情整理" class="button1">
+        <img src="modoru.png">戻る</button>
+        <button id="ore" class="button2">
+        月グラフ<br>
+        <img src="tukigurafu.png" class="img1"></button>
+	</form>
+    </div>
 <head>
 <meta charset="UTF-8">
+      <!--スマホサイズに合わせる-->
+    <meta name="viewport"
+    content="width=320,
+    height=480,
+    initial-scale=1.0,
+    minimum-scale=1.0,
+    maximum-scale=2.0,
+    user-scalable=yes" />
 </head>
 <body>
 	<!-- 日付入力 -->
-    <input type="date" id="date-input"></input>
-	<button id="sele">表示</button>
-	<button id="ore">月の変化</button>
+    <input type="date" id="date-input" class="date"></input>
+	<button id="sele" class="button3">表示</button>
 	<canvas id="myChart" width="400" height="400"></canvas>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -28,7 +44,7 @@ btnore.addEventListener('click',get_month);
 
 function get_data(){
 	var day, month, year;
-	
+
   var date = $('#date-input').val().split("-");
     console.log(date, $('#date-input').val())
 	day = date[2];
@@ -72,7 +88,7 @@ function get_data(){
            text: data['year']+"-"+data['month']+"-"+data['day'],
            position: 'bottom'
         }
-		
+
     }
 });
 			},
@@ -81,8 +97,8 @@ function get_data(){
 				console.log(data);
 			}
 		});
-	
-	
+
+
 }
 function get_month(){
 	var date = $('#date-input').val().split("-");
@@ -154,7 +170,7 @@ var myLineChart = new Chart(ctx, {
 				console.log(data);
 			}
 		});
-	
+
 }
 </script>
 </body>
