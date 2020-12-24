@@ -18,7 +18,11 @@ if (isset($_SESSION['USER']) && $_SESSION['USER'] != null){
 ?>
 <!DOCTYPE html>
 <html lang="ja">
-	<input type="button" onclick="location.href='./emo_main.php'" value="感情整理">
+     <link rel="stylesheet" href="emo_color.css">
+	<form action="emo_main.php">
+		<button type="button" name="" onclick="location.href='./emo_main.php'" value="戻る" class="button1"><img src="modoru.png">戻る</button>
+	</form>
+    
 <head>
 <meta charset="UTF-8">
 <style>
@@ -67,18 +71,26 @@ if (isset($_SESSION['USER']) && $_SESSION['USER'] != null){
 }
 </style>
 	</head>
-	<body>
-	<div id="1" class="sample1">嬉しい</div>
-	<div id="2" class="sample2">哀しい</div>
-	<div id="3" class="sample3">楽しい</div>
-	<div id="4" class="sample4">怒り</div>
-	<button id="btn">変更</button>
+	<body>    
+    <div class="radio">
+    <p><img src="senntaku.png">感情と色を選択してください</p>
+    <label><input type="radio" id="1" class="sample1" name="radio">嬉しい</input></label><br>
+	<label><input type="radio" id="2" class="sample2" name="radio">哀しい</input></label><br>
+	<label><input type="radio" id="3" class="sample3" name="radio">楽しい</input></label><br>
+	<label><input type="radio" id="4" class="sample4" name="radio">怒り</input></label><br>
+    </div>
+	
 	<div id="c1" class="violet">violet</div>
 	<div id="c2" class="hotpink">hotpink</div>
 	<div id="c3" class="royalblue">royalblue</div>
 	<div id="c4" class="deepskyblue">deepskyblue</div>
-	<p>選択中の色</p>
+
+    <div class="select">
+    <p><img src="senntaku.png">選択中の色</p>
 	<div id="sele" class="slect">select</div>
+    </div>
+        
+    <button id="btn" class="button2">変更</button>
 		
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script>
@@ -94,7 +106,6 @@ if (isset($_SESSION['USER']) && $_SESSION['USER'] != null){
 	var color2='';
 	var color3='';
 	var color4='';
-
 	const tgki = document.getElementById("1");
 	const tgai = document.getElementById("2");
 	const tgraku = document.getElementById("3");
@@ -106,7 +117,6 @@ if (isset($_SESSION['USER']) && $_SESSION['USER'] != null){
 	const colcha4 = document.getElementById("c4");
 	
 	const btn = document.getElementById("btn");
-
 	tgki.addEventListener('click',js_cha1);
 	function js_cha1(){
 			select=1;
