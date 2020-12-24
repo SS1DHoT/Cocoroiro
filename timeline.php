@@ -8,12 +8,7 @@ if (isset($_SESSION['USER']) && $_SESSION['USER'] != null){
 <!DOCTYPE html>
 <html lang="ja">
      <link rel="stylesheet" href="timeline.css">
-     <div class="btn">
     <button type="button" onclick="location.href='./menu.php'"　value="ホーム"><img src="home.png">ホームへ</button>
-    <button type="button" onclick ="location.href='./submiss.php'" class="button1" value="投稿"> 投稿 <br>
-    <img src="plus.png" class="img1"></button>
-    </div>
-    
 <head>
 <meta charset="UTF-8">
     <!--スマホサイズに合わせる-->
@@ -28,6 +23,7 @@ if (isset($_SESSION['USER']) && $_SESSION['USER'] != null){
 <body>
     <div class="box">
 	<select id="cate">
+        <option value="" hidden>カテゴリ選択</option>
 		<option value="人間関係">人間関係</option>
 		<option value="仕事">仕事</option>
 		<option value="学校">学校</option>
@@ -35,9 +31,13 @@ if (isset($_SESSION['USER']) && $_SESSION['USER'] != null){
 		<option value="いじめ">いじめ</option>
 		<option value="恋愛">恋愛</option>
 	</select>
-	<button id="btn">検索</button>
+    </div>
+    <button id="btn" class="button2">検索</button>
 	<div id="table">
-        </div>
+      
+    <button type="button" onclick ="location.href='./submiss.php'" class="button1" value="投稿"> 投稿 <br>
+    <img src="plus.png" class="img1"></button>
+        
 	</div>
     
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
