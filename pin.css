@@ -1,0 +1,90 @@
+@charset utf-8;
+
+body{
+    background-color:  #f5fffa;
+}
+
+h1{
+    color: #66cdaa;
+    margin: 20px;
+    border-left:  solid 10px #66cdaa;
+    padding: 10px;
+
+}
+
+.box{
+    margin: 1em 0;
+    color: azure;
+  
+}
+
+label{
+    margin: 30px;
+    color: #2e8b57;
+    font-size: 20px;
+}
+
+.textbox1,.textbox2{
+    width: 300px;
+    height: 30px;
+    font-size: 20px;
+    margin: 0.5em;
+    border: 2px solid #2e8b57;
+    border-radius: 15px;
+}
+
+.textbox1,.textbox2:focus {
+    outline: none;
+}
+
+button{
+  margin: 30px;
+  background:#66cdaa;
+  color:#fff;
+  border:none;
+  position:relative;
+  height:50px;
+  font-size:1.4em;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all; //動きの速さ　動き方
+  outline:none;
+  border-radius: 30px
+}
+
+button:hover{
+  background:#fff;
+  color:#2e8b57;
+}
+
+button:before,button:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #2e8b57;
+  transition:400ms ease all;
+}
+
+button:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+
+button:hover:before,button:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+
+a{
+    color: #2e8b57;
+    margin: 40px;
+}
+
+a:hover{
+    color: #66cdaa;
+}
