@@ -20,15 +20,30 @@ if (isset($_SESSION['USER']) && $_SESSION['USER'] != null){
     <link rel="stylesheet" href="emo_main.css">
 
     <div class="btn">
-	<input type="button" onclick="location.href='./menu.php'" value="ホームへ">
-	<input type="button" onclick="location.href='./emo_color.php'" value="色変更">
+	<form action="menu.php">
+		<button type="button" class="button1" value="ホーム">
+        <img src="home.png">ホームへ</button>
+	</form>
+	<form action="emo_color.php">
+		<button type="button" onclick="location.href='./emo_color.php'" class="button2" value="色変更">
+        <img src="setting.png">色変更</button>
+     </form>
     </div>
-    
+
 <head>
 <meta charset="UTF-8">
+<meta charset="UTF-8">
+    <!--スマホサイズに合わせる-->
+    <meta name="viewport"
+    content="width=320,
+    height=480,
+    initial-scale=1.0,
+    minimum-scale=1.0,
+    maximum-scale=2.0,
+    user-scalable=yes" />
 <title></title>
 <style>
-    
+
 .sample01 {  
    width:100px;
    height:100px;
@@ -36,14 +51,14 @@ if (isset($_SESSION['USER']) && $_SESSION['USER'] != null){
    background-color:#ffb6c1;
    text-align:center;
    line-height:100px;
-    
+
     display: inline-block;
     position: relative;
     left: 10px;
     top: 60px
-    
+
 }
-    
+
 .sample02 {  
    width:100px;
    height:100px;
@@ -51,13 +66,13 @@ if (isset($_SESSION['USER']) && $_SESSION['USER'] != null){
    background-color:#87cefa;
    text-align:center;
    line-height:100px;
-    
+
     display: inline-block;
     position: relative;
     left: 15px;
     top: 100px;
 }
-    
+
 .sample03 {  
    width:100px;
    height:100px;
@@ -65,13 +80,13 @@ if (isset($_SESSION['USER']) && $_SESSION['USER'] != null){
    background-color:#ffb6c1;
    text-align:center;
    line-height:100px;
-    
+
     display: inline-block;
     position: relative;
     left: 20px;
     top: 60px;
 }
-    
+
 .sample04 {  
    width:100px;
    height:100px;
@@ -79,14 +94,14 @@ if (isset($_SESSION['USER']) && $_SESSION['USER'] != null){
    background-color:#87cefa;
    text-align:center;
    line-height:100px;
-    
+
     display: inline-block;
     position: relative;
     left: 25px;
     top: 100px;
 
 }
-    
+
 </style>
 </head>
 <body>
@@ -98,7 +113,7 @@ if (isset($_SESSION['USER']) && $_SESSION['USER'] != null){
 <script type="text/javascript">
 
 "use strict";
-	
+
 var clrki = '';
 var clrdo = '';
 var clrai = '';
@@ -198,13 +213,13 @@ function js_size4(){
 function get_data() {
 	//PHPから配列を取得
 	var js_array = JSON.parse('<?php echo $php_json; ?>');
-	
+
 	//JSONから色を取得し、代入
 	clrki = js_array[0];
 	clrdo = js_array[1];
 	clrai = js_array[2];
 	clrraku = js_array[3];
-					
+
 	//取得した色をbackgroundに設定
 	tgki.style.backgroundColor=clrki;
 	tgai.style.backgroundColor=clrai;
