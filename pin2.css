@@ -1,0 +1,17 @@
+@charset utf-8;
+
+body{
+    background-color: #f5fffa;
+     font-size: 23px;
+    margin: 20px;
+}
+
+a{
+    color: #2e8b57;
+    margin: 40px;
+    font-size: 30px;
+}
+
+a:hover{
+    color: #66cdaa;
+}
