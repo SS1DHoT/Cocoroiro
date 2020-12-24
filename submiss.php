@@ -7,12 +7,27 @@ if (isset($_SESSION['USER']) && $_SESSION['USER'] != null){
 ?>
 <!DOCTYPE html>
 <html lang="ja">
-	<input type="button" onclick="location.href='./timeline.php'" value="経験談">
+     <link rel="stylesheet" href="submiss.css">
+     <div class="btn">
+    <button type="button" onclick="location.href='./timeline.php'" value="戻る"><img src="modoru.png">戻る</button>
+    <button id="btn" class="button1">投稿</button>
+    </div>
+         
 <head>
 <meta charset="UTF-8">
+     <!--スマホサイズに合わせる-->
+    <meta name="viewport"
+    content="width=320,
+    height=480,
+    initial-scale=1.0,
+    minimum-scale=1.0,
+    maximum-scale=2.0,
+    user-scalable=yes" />
 </head>
 <body>
+    <div class="box">
 	<select id="cate">
+        <option value="" hidden>カテゴリ選択</option>
 		<option value="人間関係">人間関係</option>
 		<option value="仕事">仕事</option>
 		<option value="学校">学校</option>
@@ -20,7 +35,10 @@ if (isset($_SESSION['USER']) && $_SESSION['USER'] != null){
 		<option value="いじめ">いじめ</option>
 		<option value="恋愛">恋愛</option>
 	</select>
+    </div>
+    <div class="box1">
 	<select id="age">
+        <option value="" hidden>年齢選択</option>
 		<option value="年齢非公開">年齢非公開</option>
 		<option value="10代">10代</option>
 		<option value="20代">20代</option>
@@ -29,10 +47,10 @@ if (isset($_SESSION['USER']) && $_SESSION['USER'] != null){
 		<option value="50代">50代</option>
 		<option value="60代">60代</option>
 	</select>
-	<input type="date" id="date-input"></input>
-	<button id="btn">投稿</button>
-	<textarea id="code" col="20" rows="30"></textarea>
-		
+    </div>
+	<input type="date" id="date-input" class="date"></input>
+	
+	<br><textarea id="code" col="50" rows="22" class="textarea"></textarea><br>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
 const btn = document.getElementById("btn");
