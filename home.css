@@ -1,0 +1,87 @@
+@charset "utf-8";
+
+body{
+    background-color:  #f5fffa;
+}
+
+h1{
+    color: #66cdaa;
+    margin: 20px;
+    border-left:  solid 10px #66cdaa;
+    padding: 10px;
+   
+}
+
+img {
+  width: 2.6em;
+}
+
+.card-1,.card-2,.card-3,.card-4 {
+  width: 9em;
+  margin: 0 auto;
+  cursor: pointer;
+  border: 0.5px solid #e9eaea;
+  border-radius: 3px;
+  transition: 0.3s;
+  text-align:center;
+}
+
+.box{
+    position: relative;
+}
+
+.card-1{
+    position: absolute;
+    left: 20px;
+    border: 2px solid #0a0;
+}
+
+.card-2{
+    position: absolute;
+    left: 190px;
+     border: 2px solid #0a0;
+}
+.card-3{
+    position: absolute;
+    left: 20px;
+    top: 120px;
+    border: 2px solid #ffb6c1;
+}
+
+.card-4{
+    position: absolute;
+    left: 190px;
+    top: 120px;
+    border: 2px solid #ffd700;
+}
+
+.card-1:hover,.card-2:hover ,.card-3:hover ,.card-4:hover  {
+  opacity: 0.6;
+}
+
+.content-img1 {
+  padding: 0.5em 0;
+  text-align: center;
+ background-color: #c1ffc1;     
+}
+
+.content-img2 {
+  padding: 0.5em 0;
+  text-align: center;
+ background-color: #fff0f5;     
+}
+
+.content-img3 {
+  padding: 0.5em 0;
+  text-align: center;
+ background-color: #ffffe0;    
+}
+
+
+.content-1,.content-2,.content-3,.content-4{
+  position: relative;
+  padding: 0.1em 0.3em;
+  margin: 0;
+  font-size: 0.8em;
+  background-color: #fff;
+}
