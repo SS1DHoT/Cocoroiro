@@ -2,16 +2,27 @@
 <html lang="ja">
  <head>
    <meta charset="utf-8">
+     <!--スマホサイズに合わせる-->
+    <meta name="viewport"
+    content="width=320,
+    height=480,
+    initial-scale=1.0,
+    minimum-scale=1.0,
+    maximum-scale=2.0,
+    user-scalable=yes" />
+     <link rel="stylesheet" href="enter.css">
    <title>Login</title>
  </head>
  <body>
    <h1>ユーザー登録</h1>
    <form action="user_make2.php" method="post">
-     <label>ユーザ名</label>
-     <input type="text" name="user">
-     <label>パスワード</label>
-     <input type="password" name="password">
-     <button type="submit">新規登録</button>
+    <div class="box">
+     <label>●ユーザ名</label>
+     <input type="text" name="user" class="textbox1"><br>
+     <label>●パスワード</label>
+     <input type="password" name="password" class="textbox2">
+     <button type="submit"　onfocus="this.blur();">新規登録</button>
+    </div>
 <!--
 	 <p>※パスワードは半角英数字をそれぞれ１文字以上含んだ、８文字以上で設定してください。</p>
 -->
