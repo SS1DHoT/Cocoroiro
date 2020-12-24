@@ -23,16 +23,29 @@ if ('serviceWorker' in navigator) {
 }
 </script>
 <meta charset="utf-8">
+<meta name="viewport"
+    content="width=320,
+    height=480,
+    initial-scale=1.0,
+    minimum-scale=1.0,
+    maximum-scale=2.0,
+    user-scalable=yes" />
 <TITLE>ログイン画面</TITLE>
+     <link rel="stylesheet" href="pin.css">
 </HEAD>
 <BODY>
-<P STYLE='color: palegreen'>　こころの色</P>
-ログインしてください。<BR>
+<!--<P STYLE='color: palegreen'>　こころの色</P>-->
+<h1>ログイン</h1><BR>
 <FORM ACTION="logon2.php" METHOD="post">
-ユーザー名<INPUT TYPE = 'text' NAME = 'user' SIZE = '30'><BR>
-パスワード<INPUT TYPE = "password" NAME = "pass" SIZE = "30">
-<INPUT TYPE = "submit" VALUE = "送信"><BR>
-<A HREF = './user_make.html'>はじめての方はこちら</A>
+    <div class="box">
+        <label>●ユーザー名</label>
+        <INPUT TYPE = 'text' NAME = 'user' SIZE = '30' class="textbox1"><BR>
+        <label>●パスワード</label>
+        <INPUT TYPE = "password" NAME = "pass" SIZE = "30" class="textbox2"><BR>
+            <button TYPE = "submit" onfocus="this.blur();">ログイン</button>
+<!--         <button type="submit"　onfocus="this.blur();">新規登録</button><BR>-->
+    </div>
 </FORM>
+        <A HREF = './user_make.html'>《はじめての方はこちら》</A>
 </BODY>
 </HTML>
