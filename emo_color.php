@@ -25,6 +25,14 @@ if (isset($_SESSION['USER']) && $_SESSION['USER'] != null){
     
 <head>
 <meta charset="UTF-8">
+ <!--スマホサイズに合わせる-->
+    <meta name="viewport"
+    content="width=320,
+    height=480,
+    initial-scale=1.0,
+    minimum-scale=1.0,
+    maximum-scale=2.0,
+    user-scalable=yes" />
 <style>
 .sample01 {  
    width:100px;
