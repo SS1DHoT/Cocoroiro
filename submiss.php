@@ -5,7 +5,6 @@ if (isset($_SESSION['USER']) && $_SESSION['USER'] != null){
   $user = $_SESSION['USER'];
 
 ?>
-<!DOCTYPE html>
 <html lang="ja">
      <link rel="stylesheet" href="submiss.css">
      <div class="btn">
@@ -50,19 +49,20 @@ if (isset($_SESSION['USER']) && $_SESSION['USER'] != null){
     </div>
 	<input type="date" id="date-input" class="date"></input>
 	
-	<br><textarea id="code" col="50" rows="22" class="textarea"></textarea><br>
+	<br><textarea id="code" col="50" rows="22"  class="textarea"></textarea><br>
+ 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
 const btn = document.getElementById("btn");
 btn.addEventListener('click',get_data);
 
 function get_data(){
-	
+
 	var cate = $('#cate').val();
 	var age = $('#age').val();
 	var date = $('#date-input').val();
 	var main = $('#code').val();
-	
+
 	var param ={"day":date,"cate":cate,"age":age,"main":main}
 	console.log(param);
 			$.post({
