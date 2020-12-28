@@ -27,7 +27,9 @@ session_start();
 <!--<input type="button" onclick="location.href='./timeline.html'" value="経験談">	-->
 
 	 <div>
-        <h1>ホーム</h1>
+         <div align="center">
+             <img class="img1" src="sikikantouka.png"></div>
+    
     <form>
         <div class="box">
         <div class="card-1">
@@ -60,6 +62,5 @@ session_start();
         </div>
     </form>
     </div>
-    
     </body>
 </html>
