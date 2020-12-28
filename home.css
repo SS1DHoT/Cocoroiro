@@ -4,12 +4,10 @@ body{
     background-color:  #f5fffa;
 }
 
-h1{
-    color: #66cdaa;
-    margin: 20px;
-    border-left:  solid 10px #66cdaa;
-    padding: 10px;
-   
+.img1{
+    width: 230px;
+    height: 230px;
+    margin: 50px;
 }
 
 img {
