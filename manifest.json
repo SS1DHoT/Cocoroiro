@@ -1,6 +1,6 @@
 {
-  "name":"TAP10",
-  "short_name":"TAP10",
+  "name":"こころの色",
+  "short_name":"ここいろ",
   "icons": [{
       "src": "/icons/icon-192x192.png",
       "sizes":"192x192",
@@ -10,7 +10,7 @@
       "sizes":"512x512",
       "type": "image/png"
     }],
-  "start_url": "/index.html?utm_source=homescreen",
+  "start_url": "https://blush-tight-usa-7744.ssl-lolipop.jp/logon.html",
   "display": "standalone",
   "background_color": "#FFFFFF",
   "theme_color": "#FFFFFF"
