@@ -135,6 +135,7 @@ tgdo.addEventListener('click',js_size4);
 
 document.addEventListener('DOMContentLoaded',get_data);
 
+//各要素の大きさを変更
 function js_size1(){
 	if(a1==0){
 		a1++;
