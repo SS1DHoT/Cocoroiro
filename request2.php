@@ -4,7 +4,7 @@ session_start();
 if (isset($_SESSION['USER'])) {
   $user = $_SESSION['USER'];
 // データーベースへpdoで接続
-$pdo = new pdo("mysql:host=localhost;dbname=webapp","root","");
+$pdo = new pdo("mysql:host=mysql148.phy.lolipop.lan;dbname=LAA1210934-webapp","LAA1210934","12345");
 
 header("Content-type: text/plain; charset=UTF-8");
 $yesr = $_POST['year'];
