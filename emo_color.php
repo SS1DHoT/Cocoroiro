@@ -104,6 +104,7 @@ if (isset($_SESSION['USER']) && $_SESSION['USER'] != null){
 	<script>
 	"use strict";
 	
+	//各種宣言
 	var select=0;
 	var selectCl='';
 	var Data = '';
@@ -125,36 +126,24 @@ if (isset($_SESSION['USER']) && $_SESSION['USER'] != null){
 	const colcha4 = document.getElementById("c4");
 	
 	const btn = document.getElementById("btn");
+	//喜びが選択された時
 	tgki.addEventListener('click',js_cha1);
 	function js_cha1(){
 			select=1;
-			tgki.style.backgroundColor="#98fb98";
-		    tgdo.style.backgroundColor="white";
-		    tgai.style.backgroundColor="white";
-		    tgraku.style.backgroundColor="white";
 	};
+	//哀しいが選択された時
 	tgai.addEventListener('click',function(){
 			select=2;
-			tgai.style.backgroundColor="#98fb98";
-		    tgki.style.backgroundColor="white";
-	        tgdo.style.backgroundColor="white";
-		    tgraku.style.backgroundColor="white";
-							 });
+	});
+	//楽しいが選択された時
 	tgraku.addEventListener('click',function(){
 			select=3;
-			tgraku.style.backgroundColor="#98fb98";
-		    tgki.style.backgroundColor="white";
-		    tgdo.style.backgroundColor="white";
-	        tgai.style.backgroundColor="white";
-							 });
+	});
+	//怒りが選択された時
 	tgdo.addEventListener('click',function(){
 			select=4;
-			tgdo.style.backgroundColor="#98fb98";
-		    tgki.style.backgroundColor="white";
-		    tgai.style.backgroundColor="white";
-		    tgraku.style.backgroundColor="white";
-							 });
-	
+	});
+	//各種色を選択したとき
 	colcha1.addEventListener('click',function(){
 		selectCl="violet";
 		check.style.backgroundColor="violet";
@@ -171,8 +160,9 @@ if (isset($_SESSION['USER']) && $_SESSION['USER'] != null){
 		selectCl="deepskyblue";
 		check.style.backgroundColor="deepskyblue";
 	});
-	
+	//変更ボタンをタップ
 	btn.addEventListener('click',function(){
+		各感情ごとの処理
 		if(select==1){
 			var param ={"sel":"ki","color":selectCl}
 			$.post({
