@@ -49,6 +49,7 @@ $user = $_SESSION['USER'];
 				var cate = $('#cate').val();
 				var param ={"cate":cate}
 					$.post({
+						//選択したカテゴリをrequest5.phpに送る
 						url: 'request5.php', //　送り先
 						data: param, //　渡したいデータ
 						dataType : 'json', //　データ形式を指定
