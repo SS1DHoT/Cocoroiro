@@ -5,10 +5,10 @@ if (isset($_SESSION['USER']) && $_SESSION['USER'] != null){
   $user = $_SESSION['USER'];
 	
 // データーベースへpdoで接続
-    $pdo = new pdo("mysql:host=localhost;dbname=webapp","root","");
+    $pdo = new pdo("mysql:host=mysql148.phy.lolipop.lan;dbname=LAA1210934-webapp","LAA1210934","12345");
 
 // SQL実行
-	$ps = $pdo->query("SELECT * FROM user WHERE name = '$user'");
+	$ps = $pdo->query("SELECT * FROM userdata WHERE user = '$user'");
 	$r = $ps->fetch(PDO::FETCH_ASSOC);
 // 配列に色情報を格納
 	$color = array($r['ki'],$r['do'],$r['ai'],$r['raku']);
@@ -21,7 +21,7 @@ if (isset($_SESSION['USER']) && $_SESSION['USER'] != null){
 
     <div class="btn">
 	<form action="menu.php">
-		<button type="button" class="button1" value="ホーム">
+		<button type="button" onclick="location.href='./menu.php'" class="button1" value="ホーム">
         <img src="home.png">ホームへ</button>
 	</form>
 	<form action="emo_color.php">
@@ -31,7 +31,6 @@ if (isset($_SESSION['USER']) && $_SESSION['USER'] != null){
     </div>
 
 <head>
-<meta charset="UTF-8">
 <meta charset="UTF-8">
     <!--スマホサイズに合わせる-->
     <meta name="viewport"
@@ -225,23 +224,33 @@ function get_data() {
 	tgai.style.backgroundColor=clrai;
 	tgraku.style.backgroundColor=clrraku;
 	tgdo.style.backgroundColor=clrdo;
-}
-function send_data(){
-	$.ajax({
-				type: "POST", //　POSTでも可
-				url: "request.php", //　送り先
-    			data: Data, //　渡したいデータ
-    			//dataType : "json", //　データ形式を指定
-    			//scriptCharset: 'utf-8', //　文字コードを指定
-				success: function(param){
-				alert('変更が完了しました。');
-				console.log(param);
+
+	//日付処理
+	var day = new Date();
+	var year = day.getFullYear();
+ 	//月だけ+1すること
+ 	var month = 1 + day.getMonth();
+	var now = day.getDate();
+	var before = '';
+	if(!before){
+		before = now;
+	}else if(before === now){
+		before =now;
+	}else if(before != now){
+		var param ={"year":year,"month":month,"day":before,"ki":a1,"do":a4,"ai":a2,"raku":a3}
+		$.post({
+			url: 'request2.php', // 送り先
+			data: param, // 渡したいデータ
+			//dataType : 'json', // データ形式を指定
+			success: function(data){
+				console.log('更新');
 			},
 			error: function(data){
-        		alert('変更に失敗しました。');
 				console.log(data);
 			}
 		});
+		before = now;
+	}
 }
 
 
@@ -250,7 +259,7 @@ function send_data(){
 }else{
      session_destroy();
      print "<P>ちゃんとログインしてね！<BR>
-            <A HREF='./pin.php'>ログイン</A></P>";
+            <A HREF='./logon.html'>ログイン</A></P>";
 }
 ?>
 </body>
