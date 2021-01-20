@@ -66,15 +66,15 @@ function initMap() {
                     //結果の出力
                     var inputData = document.getElementById(`outputBox${No}`)
                     //診療所名
-                    inputData.insertAdjacentHTML('beforeend', `<a href='${place.website}' id='name${No}'>${place.name}</a>`);
+                    inputData.insertAdjacentHTML('beforeend', `<a href='${place.website}' class='name' id='name${No}'>${place.name}</a>`);
+
+                    inputData.insertAdjacentHTML('beforeend', `<div class='add' id='add${No}'>${place.formatted_address.substr(3,8)}</div>`);
                     //診療所住所
-                    inputData.insertAdjacentHTML('beforeend', `<div id='add${No}'>${place.formatted_address.substr(3)}</div>`);
+                    inputData.insertAdjacentHTML('beforeend', `<div class='add' id='add${No}'>${place.formatted_address.substr(12)}</div>`);
                     //診療所電話番号
-                    inputData.insertAdjacentHTML('beforeend', `<div id='phone${No}'>${place.formatted_phone_number}</div>`);
+                    inputData.insertAdjacentHTML('beforeend', `<div class='phone' id='phone${No}'>${place.formatted_phone_number}</div>`);
                     //営業ステータス格納用タグ
-                    inputData.insertAdjacentHTML('beforeend', `<div id='status${No}'></div>`);
-                    //曜日ごと営業時間テーブル格納用タグ
-                    inputData.insertAdjacentHTML('beforeend', `<div id='statusBox${No}'></div>`);
+                    inputData.insertAdjacentHTML('beforeend', `<div class='status' id='status${No}'></div>`);
                     //曜日ごとの営業時間を出力
                     for (var i = 0; i < 7; i++){
                         week_array[i] = place.opening_hours['weekday_text'][i].split(': ');
@@ -111,7 +111,16 @@ function initMap() {
             var row = document.createElement("tr");
             for (var j = 0; j < 7; j++) {
                 var cell = document.createElement("td");
-                var cellText = document.createTextNode(week_array[j][i]);
+                var str = week_array[j][i];
+                var result = str.replace('時', ':').replace('分', '').replace(',', '');
+                //「str」と「result」が同じ文字列になるまで繰り返す
+                while(result !== str) {
+                
+                    str = str.replace('時', ':').replace('分', '').replace(',', '');
+                    result = result.replace('時', ':').replace('分', '').replace(',', '');
+                
+                }
+                var cellText = document.createTextNode(str);
                 cell.appendChild(cellText);
                 row.appendChild(cell);
             }
