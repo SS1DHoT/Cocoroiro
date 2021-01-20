@@ -62,13 +62,12 @@ function get_data(){
 	var age = $('#age').val();
 	var date = $('#date-input').val();
 	var main = $('#code').val();
-
+	//各種データをrequest6.phpに送る
 	var param ={"day":date,"cate":cate,"age":age,"main":main}
 	console.log(param);
 			$.post({
 				url: 'request6.php', //　送り先
-    			data: param, //　渡したいデータ
-    			//dataType : 'json', //　データ形式を指定
+    				data: param, //　渡したいデータ
 				success: function(data){
 					alert('投稿に成功しました。');
 					console.log(data);
