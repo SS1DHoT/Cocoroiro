@@ -1,0 +1,104 @@
+html{
+    width: 100%;
+    height: 100%;
+}
+body{
+    background-color: #f5fffa;
+    width: auto;
+    height: 100%;
+}
+
+#all-select{
+    height: 100%;
+}
+
+#top-all{
+    height: 20%;
+    width: auto;
+    margin: auto;
+}
+
+h1{
+    color: #66cdaa;
+    margin: 10px;
+    padding: 10px;
+    border-left:  solid 10px #66cdaa;
+}
+
+/* #form-box{
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+} */
+
+#form{
+    display: flex;
+    width: fit-content;
+    margin: auto;
+}
+
+#place{
+    border: 2px solid #66cdaa;
+    border-radius: 20px;
+    width: auto;
+    margin: 5px;
+    text-align: center;
+}
+
+.Data{
+    text-align: center;
+    border: ridge 3px deepskyblue;
+    margin-bottom: 10px;
+}
+
+.status{
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+
+@media screen and (max-width: 900px) {
+    table {
+        font-size: 10px;
+    }
+}
+@media screen and (min-width: 1280px) {
+    table {
+        font-size: large;
+    }
+}
+table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border: solid 2px orange;
+}
+
+td {
+    text-align: center;
+}
+
+
+button{
+    border-radius: 30px;
+    color: #fff;  
+    background-color:#66cdaa; 
+    border: none;
+    outline: none;
+    margin: 8px;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 18px;
+}
+.button1{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+img{
+    height: 15px;
+    width: 15px;
+}
+
+
+
