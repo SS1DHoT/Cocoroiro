@@ -32,9 +32,11 @@ if (isset($_SESSION['USER']) && $_SESSION['USER'] != null){
 	<!-- 日付入力 -->
     <input type="date" id="date-input" class="date"></input>
 	<button id="sele" class="button3">表示</button>
-	<canvas id="myChart" width="400" height="400"></canvas>
+//グラフ用のjQuery等の宣言
+<canvas id="myChart" width="400" height="400"></canvas>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
 <script>
 const btnse = document.getElementById("sele");
 const btnore = document.getElementById("ore");
@@ -42,6 +44,7 @@ const btnore = document.getElementById("ore");
 btnse.addEventListener('click',get_data);
 btnore.addEventListener('click',get_month);
 
+//半ドーナツグラフを表示
 function get_data(){
 	var day, month, year;
 
@@ -52,9 +55,10 @@ function get_data(){
 	year = date[0];
 	var param ={"year":year,"month":month,"day":day}
 			$.post({
+				//request3.phpを介してデータベースから値を取得
 				url: 'request3.php', //　送り先
-    			data: param, //　渡したいデータ
-    			dataType : 'json', //　データ形式を指定
+				data: param, //　渡したいデータ
+				dataType : 'json', //　データ形式を指定
 				success: function(data){
 				var ctx = document.getElementById("myChart");
 	var myChart = new Chart(ctx, {
@@ -64,7 +68,7 @@ function get_data(){
         datasets: [{
             label: '# of Votes',
             data: [data['ki'], data['raku'],data['ai'],data['do']],
-			//data: [3, 3, 1, 1],
+	    //グラフの色を設定
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(255, 206, 86, 0.2)',
@@ -100,6 +104,7 @@ function get_data(){
 
 
 }
+//月ごとのグラフ処理
 function get_month(){
 	var date = $('#date-input').val().split("-");
     console.log(date, $('#date-input').val())
@@ -112,6 +117,7 @@ function get_month(){
 	var ai=new Array();
 	var raku=new Array();
 	var param ={"year":year,"month":month,"day":day}
+			//request4.phpを介してデータベースから値を取得
 			$.post({
 				url: 'request4.php', //　送り先
     			data: param, //　渡したいデータ
@@ -129,6 +135,7 @@ function get_month(){
 var data = {
     labels: under,
     datasets: [
+//グラフの色を設定
 {
             label: "嬉しい",
             backgroundColor: Chart.helpers.color('rgb(235, 62, 35)').alpha(0).rgbString(),
