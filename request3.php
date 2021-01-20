@@ -15,16 +15,4 @@ $ps = $pdo->query("SELECT * FROM emodata WHERE name='$user' AND year='$year' AND
 $r = $ps->fetch(PDO::FETCH_ASSOC);
 echo json_encode($r);
 
-//$stmt = $pdo->prepare('SELECT * FROM emodata WHERE name=:user AND year=:year AND month=:month AND day=:day');
-//	//変数を文字列に
-//	$stmt->bindValue(':user', $user, PDO::PARAM_STR);
-//	$stmt->bindValue(':year', $year, PDO::PARAM_STR);
-//	$stmt->bindValue(':month', $month, PDO::PARAM_STR);
-//	$stmt->bindValue(':day', $day, PDO::PARAM_STR);
-//	// クエリ実行
-//	$ps=$stmt->execute();
-//	$r = $ps->fetch(PDO::FETCH_ASSOC);
-//	echo($stmt);
-
-
 }
