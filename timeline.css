@@ -1,9 +1,40 @@
 @charset utf-8;
 
+html{
+	height: 100%;
+	width: 100%;
+}
+
 body{
+	height: 100%;
     background-color: #f5fffa;
 }
 
+#top{
+	height: 25%;
+	overflow:hidden;
+}
+.serch{
+	box-sizing: border-box;
+}
+#text-area{
+	height: 75%;
+	margin: auto;
+}
+#table{
+	margin: 10px 15px;
+	box-sizing: border-box;
+}
+p{
+	margin: 0 0 10px 20px;
+	font-size: large;
+}
+
+@media screen and (min-width: 720px) {
+    p {
+		font-size: 30px;
+    }
+}
 button{
     border-radius: 30px;
     color: #fff;  
@@ -41,7 +72,7 @@ img{
 }
 
 
-.box{
+#box{
 	position: relative;
 	border-radius: 2px;
 	border: 2px solid #66cdaa;
@@ -50,7 +81,7 @@ img{
     margin: 20px;
 }
 
-.box select{
+#box select{
 	width: 100%;
 	padding-right: 1em;
 	cursor: pointer;
@@ -66,11 +97,11 @@ img{
 }
 
 /*セレクトボックス内下向き矢印*/
-.box select::-ms-expand{
+#box select::-ms-expand{
     display: none;
 }
 
-.box::before{
+#box::before{
 	position: absolute;
 	top: 0.8em;
 	right: 0.8em;
@@ -85,12 +116,12 @@ img{
 }
 
 /*セレクトボックス内文字*/
-.box select{
+#box select{
 	padding: 8px 38px 8px 8px;
 	color: #2e8b57;
 }
 
-.button2{
+#btn1{
     position: absolute;
     left: 20px;
 }
