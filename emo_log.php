@@ -10,12 +10,12 @@ if (isset($_SESSION['USER']) && $_SESSION['USER'] != null){
     <link rel="stylesheet" href="emo_log.css">
     <div class="btn">
 	<form action="emo_main.php">
-		<button type="button" name="" value="感情整理" class="button1">
+		<button type="button" onclick="location.href='./menu.php'" name="" value="感情整理" class="button1">
         <img src="modoru.png">戻る</button>
+	</form>
         <button id="ore" class="button2">
         月グラフ<br>
         <img src="tukigurafu.png" class="img1"></button>
-	</form>
     </div>
 <head>
 <meta charset="UTF-8">
@@ -67,14 +67,14 @@ function get_data(){
 			//data: [3, 3, 1, 1],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
                 'rgba(255, 206, 86, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
                 'rgba(75, 192, 192, 0.2)'
             ],
             borderColor: [
                 'rgba(255,99,132,1)',
-                'rgba(54, 162, 235, 1)',
                 'rgba(255, 206, 86, 1)',
+                'rgba(54, 162, 235, 1)',
                 'rgba(75, 192, 192, 1)'
             ],
             borderWidth: 1
@@ -129,34 +129,36 @@ function get_month(){
 var data = {
     labels: under,
     datasets: [
+{
+            label: "嬉しい",
+            backgroundColor: Chart.helpers.color('rgb(235, 62, 35)').alpha(0).rgbString(),
+            borderColor: 'rgba(255, 99, 132, 1)',
+            pointBackgroundColor: 'rgba(255, 99, 132, 1)',
+            data: raku
+        },
         {
             label: "喜び",
-            backgroundColor: Chart.helpers.color('rgb(235, 62, 35)').alpha(0.5).rgbString(),
-            borderColor: 'rgb(235, 62, 35)',
-            pointBackgroundColor: 'rgb(235, 62, 35)',
+            backgroundColor: Chart.helpers.color('rgb(235, 62, 35)').alpha(0).rgbString(),
+            borderColor: 'rgba(255, 206, 86, 1)',
+            pointBackgroundColor: 'rgba(255, 206, 86, 1)',
             data: ki
+        },
+{
+            label: "哀しい",
+            backgroundColor: Chart.helpers.color('rgb(235, 62, 35)').alpha(0).rgbString(),
+            borderColor: 'rgba(54, 162, 235, 1)',
+            pointBackgroundColor: 'rgba(54, 162, 235, 1)',
+            data: ai
         },
         {
             label: "怒り",
-            backgroundColor: Chart.helpers.color('rgb(54, 162, 235)').alpha(0.5).rgbString(),
-            borderColor: 'rgb(54, 162, 235)',
-            pointBackgroundColor: 'rgb(54, 162, 235)',
+            backgroundColor: Chart.helpers.color('rgb(235, 62, 35)').alpha(0).rgbString(),
+            borderColor: 'rgba(75, 192, 192, 1)',
+            pointBackgroundColor: 'rgba(75, 192, 192, 1)',
             data: oko
-        },
-		{
-            label: "哀しい",
-            backgroundColor: Chart.helpers.color('rgb(235, 62, 35)').alpha(0.5).rgbString(),
-            borderColor: 'rgb(235, 62, 35)',
-            pointBackgroundColor: 'rgb(235, 62, 35)',
-            data: ai
-        },
-		{
-            label: "楽しい",
-            backgroundColor: Chart.helpers.color('rgb(235, 62, 35)').alpha(0.5).rgbString(),
-            borderColor: 'rgb(235, 62, 35)',
-            pointBackgroundColor: 'rgb(235, 62, 35)',
-            data: raku
         }
+		
+		
     ]
 };
 var myLineChart = new Chart(ctx, {
