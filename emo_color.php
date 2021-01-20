@@ -4,10 +4,10 @@ session_start();
 if (isset($_SESSION['USER']) && $_SESSION['USER'] != null){
   $user = $_SESSION['USER'];
 // データーベースへpdoで接続
-    $pdo = new pdo("mysql:host=localhost;dbname=webapp","root","");
+    $pdo = new pdo("mysql:host=mysql148.phy.lolipop.lan;dbname=LAA1210934-webapp","LAA1210934","12345");
 
 // SQL作成
-	$sql = "SELECT * FROM user WHERE name= $user";
+	$sql = "SELECT * FROM userdata WHERE user= $user";
 // SQL実行
 	$res = $pdo->query($sql);
 // 配列に色情報を格納
@@ -243,5 +243,3 @@ if (isset($_SESSION['USER']) && $_SESSION['USER'] != null){
             <A HREF='./pin.php'>ログイン</A></P>";
 }
 ?>
-	</body>
-</html>
