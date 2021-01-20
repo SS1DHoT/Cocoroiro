@@ -2,23 +2,32 @@
 <html lang="jp" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <!-- <meta name=”viewport” content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title></title> -->
+    <meta name="viewport"
+    content="width=device-width,
+    height=480,
+    initial-scale=1.0,
+    minimum-scale=1.0,
+    maximum-scale=2.0,
+    user-scalable=yes" />
+    <link rel="stylesheet" href="info.css">
   </head>
   <body>
-    <div>
-      <header>
-        心のいろ
-      </header>
-      <div>
-        <h2>心療内科</h2>
+    <div id="all-select">
+      <button type="button" onclick="location.href='./menu.php'"　value="ホーム"><img src="home.png">ホームへ</button>
+      <div id="top-all">
+        <div id="top">
+          <h1>クリニック検索</h1>
+          <div id="form-box">
+            <form action="#" id="form">
+              <input id="place" type="text" name="place" value="">
+              <button id="searchbtn" type="submit" name="button" >検索</button>
+            </form>
+          </div>
+        </div>
       </div>
-      <div>
-        <form action="#" id="form">
-          <input id="place" type="text" name="place" value="">
-          <button id="searchbtn" type="submit" name="button" >検索</button>
-        </form>
-      </div>
-      <div style="background-color: aqua;" id="output">
+      <div id="output">
       </div>
     </div>
     <script defer
